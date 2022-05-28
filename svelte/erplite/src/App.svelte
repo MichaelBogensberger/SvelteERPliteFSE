@@ -2,11 +2,11 @@
   import Router from "svelte-spa-router";
 
   import Home from "./routes/Home.svelte";
-  import Customers from "./routes/Customers.svelte";
+  import Customers from "./routes/Customer.svelte";
   import NotFound from "./routes/NotFound.svelte";
 
   import "carbon-components-svelte/css/g100.css";
-  import { Button } from "carbon-components-svelte";
+  import { Button, OrderedList } from "carbon-components-svelte";
   import {location} from 'svelte-spa-router'
 
   import {
@@ -21,12 +21,15 @@
     Column,
   } from "carbon-components-svelte";
   import { ClickableTile } from "carbon-components-svelte";
+import Orders from "./routes/Order.svelte";
+import Customer from "./routes/Customer.svelte";
 
   let isSideNavOpen = false;
 
   let routes = {
     "/": Home,
-    "/customers": Customers,
+    "/order": Orders,
+    "/customer" : Customer,
     "*": NotFound,
   };
 
@@ -42,8 +45,8 @@
     <HeaderNav>
 		<!-- isSelected -->
       <HeaderNavItem  href="/" text="Home" />
-      <HeaderNavItem href="/#/customers" text="Customers" />
-      <HeaderNavItem href="/" text="Link 3" />
+      <HeaderNavItem href="/#/order" text="Orders" />
+      <HeaderNavItem href="/#/customer" text="Customer" />
       <HeaderNavMenu text="Menu">
         <HeaderNavItem href="/" text="Link 1" />
         <HeaderNavItem href="/" text="Link 2" />

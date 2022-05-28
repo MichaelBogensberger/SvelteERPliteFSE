@@ -32,10 +32,10 @@ import { ClickableTile } from "carbon-components-svelte";
   <Grid>
     <Row>
       <Column>
-        <ClickableTile href="/#/customers">Customers</ClickableTile>
+        <ClickableTile href="/#/order">Orders</ClickableTile>
       </Column>
       <Column>
-        <ClickableTile href="/">Orders</ClickableTile>
+        <ClickableTile href="/#/customer">Customer</ClickableTile>
       </Column>
       <Column><ClickableTile href="/">etc</ClickableTile></Column>
       <Column><ClickableTile href="/">etc</ClickableTile></Column>
