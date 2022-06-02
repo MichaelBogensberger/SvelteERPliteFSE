@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/stock")
+@CrossOrigin(origins = "*")
 public class PackingRestController {
 
     PackingItemRepository packingItemRepository;

@@ -67,7 +67,7 @@ public class ErpliteApplication implements ApplicationRunner, ApplicationListene
 
         Order o22 = o2.get();
         o22.orderStateTransitionTo(OrderState.PAYMENT_VERIFIED);
-        orderRepository.updateOrderWithNewState(o22);
+        //orderRepository.updateOrderWithNewState(o22);
 
         System.out.println("Inserting Customer to Test");
         List<Address> addressList = new ArrayList<>();

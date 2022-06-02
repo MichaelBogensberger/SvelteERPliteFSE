@@ -23,6 +23,7 @@
   import { ClickableTile } from "carbon-components-svelte";
 import Orders from "./routes/Order.svelte";
 import Customer from "./routes/Customer.svelte";
+import Packings from "./routes/Packings.svelte";
 
   let isSideNavOpen = false;
 
@@ -30,6 +31,7 @@ import Customer from "./routes/Customer.svelte";
     "/": Home,
     "/order": Orders,
     "/customer" : Customer,
+    "/packings": Packings,
     "*": NotFound,
   };
 
@@ -46,6 +48,7 @@ import Customer from "./routes/Customer.svelte";
 		<!-- isSelected -->
       <HeaderNavItem  href="/" text="Home" />
       <HeaderNavItem href="/#/order" text="Orders" />
+      <HeaderNavItem href="/#/packings" text="Packings" />
       <HeaderNavItem href="/#/customer" text="Customer" />
       <HeaderNavMenu text="Menu">
         <HeaderNavItem href="/" text="Link 1" />

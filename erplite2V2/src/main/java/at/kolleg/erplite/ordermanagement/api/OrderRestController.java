@@ -26,6 +26,7 @@ import java.util.logging.Logger;
 @RestController
 @RequestMapping("/api/v1")
 @AllArgsConstructor
+@CrossOrigin(origins = "*")
 class OrderRestController {
 
     private OrderCommandService orderCommandService;
