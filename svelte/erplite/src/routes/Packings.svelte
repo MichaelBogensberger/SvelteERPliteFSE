@@ -107,6 +107,39 @@
 
     active = false;
   }
+
+
+  let packingItemID;
+  let openVerifyPackingItemModal = false;
+
+
+  async function handleItemForDelivery() {
+    openVerifyPackingItemModal = false;
+
+
+    const res = await fetch(
+      url + "/stock/setPackedForPacking/" + packingItemID,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    ).then(function () {
+     
+      getPackings();
+
+    });
+  }
+
+
+
+
+
+
+  
+
+
 </script>
 
 <br /><br /><br /><br /><br /><br /><br /><br />
@@ -132,17 +165,51 @@
     <Column lg={4} />
 
     <Column>
-      <ClickableTile>zum versand makieren</ClickableTile>
+      <ClickableTile
+      on:click={() => (openVerifyPackingItemModal = true)}
+      >zum versand makieren</ClickableTile>
     </Column>
 
     <Column lg={4} />
   </Row>
 </Grid>
 
+
+
+
+
+{#if openVerifyPackingItemModal}
+  <ComposedModal
+
+    open
+    on:submit={() => handleItemForDelivery()}
+    preventCloseOnClickOutside
+  >
+    <ModalHeader label="Package" title="Set package for delivery" />
+    <ModalBody hasForm>
+      <TextInput
+        bind:value={packingItemID}
+        inline
+        labelText="Item ID"
+        placeholder="5"
+      />
+    </ModalBody>
+    <ModalFooter
+      primaryButtonText="Proceed"
+      type="submit"
+      secondaryButtons={[{ text: "Cancel" }]}
+      on:click:button--secondary={({ detail }) => {
+        if (detail.text === "Cancel") openVerifyPackingItemModal = false;
+      }}
+    />
+  </ComposedModal>
+{/if}
+
+
 <style>
-  h1 {
-    color: #ff3e00;
-    font-size: 4em;
-    font-weight: 400;
-  }
+
+.hide {
+  display: none !important;
+}
+
 </style>
