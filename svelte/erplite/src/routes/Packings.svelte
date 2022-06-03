@@ -151,8 +151,8 @@
     <Column lg={4} />
     <Column lg={8}>
       <DataTable
-        title="Orders"
-        description="Hier kannst du Orders einsehen"
+        title="Packings"
+        description="Hier kannst du die Verpackungen einsehen"
         {headers}
         {rows}
       />
@@ -167,7 +167,7 @@
     <Column>
       <ClickableTile
       on:click={() => (openVerifyPackingItemModal = true)}
-      >zum versand makieren</ClickableTile>
+      >zum Versand markieren</ClickableTile>
     </Column>
 
     <Column lg={4} />
